@@ -14,7 +14,7 @@ def get_data():
 
     # with open('./data.json', 'w') as fp:
     #     json.dump(data, fp)
-    return "data recieved"
+    return json.dumps(data)
 
 
 if __name__ == '__main__':
