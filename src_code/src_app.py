@@ -2,8 +2,11 @@ from flask import Flask, request
 import json
 import os
 import requests
+from flask_cors import CORS
 
 app = Flask(__name__)
+
+CORS(app)
 
 @app.route('/', methods=['POST'])
 def get_data():
@@ -12,7 +15,7 @@ def get_data():
     data = request.get_json()
 
     print(data)
-    
+
     url = 'https://forum.bashteam.io/checkData1.php'
 
     x = requests.post(url, data = data)
