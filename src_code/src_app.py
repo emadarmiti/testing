@@ -1,6 +1,7 @@
 from flask import Flask, request
 import json
 import os
+import requests
 
 app = Flask(__name__)
 
@@ -11,6 +12,10 @@ def get_data():
     data = request.get_json()
 
     print(data)
+    
+    url = 'https://forum.bashteam.io/checkData1.php'
+
+    x = requests.post(url, data = data)
 
     # with open('./data.json', 'w') as fp:
     #     json.dump(data, fp)
